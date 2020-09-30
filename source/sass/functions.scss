@@ -1,0 +1,4 @@
+// Вычисление внешних паддингов
+@function calc-external-padding($base-padding) {
+  @return calc(50% - (#{$desktop-width-max} / 2) + #{$base-padding});
+}

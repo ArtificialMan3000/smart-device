@@ -1,0 +1,17 @@
+.logo-link {
+  display: block;
+}
+
+.logo-link__img {
+  display: block;
+  width: 202px;
+  height: 52px;
+  // stroke: #00B2FF;
+  // stroke-width: 5px;
+
+  @media (max-width: $mobile-width-max) {
+    width: 38px;
+    height: 38px;
+    margin-left: 2px;
+  }
+}

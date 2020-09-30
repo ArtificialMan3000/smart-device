@@ -1,5 +1,21 @@
-@import "vendor/normalize.scss";
 @import "fonts.scss";
 @import "variables.scss";
+@import "functions.scss";
 @import "mixins.scss";
+
+// Общие стили
+@import "vendor/normalize.scss";
 @import "scaffolding.scss";
+
+// Контейнер
+@import "blocks/container.scss";
+
+// Мелкие блоки
+@import "blocks/visually-hidden.scss";
+@import "blocks/button.scss";
+@import "blocks/logo-link.scss";
+@import "blocks/header-contacts.scss";
+
+// Крупные блоки
+@import "blocks/site-wrapper.scss";
+@import "blocks/page-header.scss";

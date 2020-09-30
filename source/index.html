@@ -4,17 +4,51 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,inital-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Название сайта</title>
-  <link rel="preload" href="fonts/fontname.woff2" as="font" crossorigin="anonymous">
+  <title>Smart Device</title>
+  <link rel="preload" href="fonts/PT_Mono/ptmono.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Roboto_Condensed/Robotocondensed.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
+<div style="display: none;">
+  <include src="build/img/sprite_auto.svg"></include>
+</div>
 <div class="site-wrapper">
   <header class="page-header">
-
+    <a class="page-header__logo logo-link">
+      <picture>
+        <source media="(max-width: 767px)" srcset="img/logo-header-mobile.svg">
+        <img class="logo-link__img" src="img/logo-header.svg" width="202" height="52" alt="Логотип Smart Device">
+      </picture>
+    </a>
+    <address class="page-header__contacts header-contacts">
+      <ul class="header-contacts__list">
+        <li class="header-contacts__item">
+          <a class="header-contacts__link header-contacts__link--email" href="mailto:info@sd.ru">
+            <svg class="header-contacts__img header-contacts__img--email" width="19" height="14" aria-labelledby="svg-email-icon" xmlns="http://www.w3.org/2000/svg">
+              <title id="svg-email-icon">Почта: info@sd.ru</title>
+              <use xlink:href="#sprite-email-icon"></use>
+            </svg>
+            <span class="header-contacts__link-text">info@sd.ru</span>
+          </a>
+        </li>
+        <li class="header-contacts__item">
+          <a class="header-contacts__link header-contacts__link--phone" href="tel:+74950005252">
+            <svg class="header-contacts__img header-contacts__img--phone" width="18" height="18" aria-labelledby="svg-phone-icon" xmlns="http://www.w3.org/2000/svg">
+              <title id="svg-phone-icon">Телефон: +7 (495) 000 52 52</title>
+              <use xlink:href="#sprite-phone-icon"></use>
+            </svg>
+            <span class="header-contacts__link-text">+7 (495) 000 52 52</span>
+          </a>
+        </li>
+      </ul>
+    </address>
+    <button class="page-header__feedback-button button button--transparent-white">
+      Заказать звонок
+    </button>
   </header>
   <main>
-    <h1 class="visually-hidden">Заголовок первого уровня</h1>
+    <h1 class="visually-hidden">Smart Device - умные технологии</h1>
 
   </main>
   <footer class="page-footer">

@@ -83,7 +83,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('js', function (done) {
-  gulp.src(['source/js/menu.js', 'source/js/main.js'])
+  gulp.src(['source/js/menu.js', 'source/js/main.js'], {allowEmpty: true})
       .pipe(concat('main.js'))
       .pipe(gulp.dest('build/js'));
 
@@ -114,7 +114,7 @@ gulp.task('server', function () {
     notify: false,
     open: true,
     cors: true,
-    port: '3002',
+    port: '3003',
     ui: {
       port: 3001
     }

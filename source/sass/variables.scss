@@ -1,42 +1,31 @@
-//Breakpoints
-$mobile-width: 320px;
-$tablet-width: 768px;
-$desktop-width: 1300px;
+// Breakpoints
+$desktop-width-max: 1500px;
+$desktop-width-min: 1024px;
+$tablet-width-max: 1023px;
+$tablet-width-min: 768px;
+$mobile-width-max: 767px;
+$mobile-width-min: 320px;
 
 $retina-dpi: 144dpi;
 $retina-dppx: 1.5dppx;
 
-//Content widthes
-$mobile-content-width: 280px;
-$tablet-content-width: 708px;
-$desktop-content-width: 1220px;
-
 //Font
-$title-font-family: "Font Name", "Arial", sans-serif;
-$text-font-family: "Arial", sans-serif;
+$title-font-family: "Roboto Condesed", "Arial", sans-serif;
+$text-font-family: "PT Mono", "Arial", sans-serif;
 
-$text-font-size: 14px;
-$text2-font-size: 16px;
-$small-font-size: 12px;
-$title1-font-size: 36px;
-$title2-font-size: 24px;
-$title3-font-size: 16px;
+$text-font-size: 16px;
 
-$text-line-height: 18px;
-$text2-line-height: 24px;
+$text-line-height: 22px;
 
 //Colors
-$brand-color: #68b738;
-$brand-color-dark: #64a83b;
+$white: #fff;
 
-$title-color: #111111;
-$title-color2: #222222;
-$text-color: #444444;
+$brand-color: #00b2ff;
 
-$white: #ffffff;
-$gray-light: #f2f2f2;
+$text-color: #666;
+$footer-text-color: #1b2d37;
 
 //Sizes
-$mobile-external-paddings: 20px;
-$tablet-external-paddings: 30px;
-$desktop-external-paddings: 40px;
+$desktop-external-paddings: 43px;
+$tablet-external-paddings: 24px;
+$mobile-external-paddings: 15px;
