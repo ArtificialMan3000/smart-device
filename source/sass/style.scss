@@ -12,6 +12,9 @@
 
 // Мелкие блоки
 @import "blocks/visually-hidden.scss";
+@import "blocks/hidden-desktop.scss";
+@import "blocks/hidden-tablet.scss";
+@import "blocks/hidden-mobile.scss";
 @import "blocks/button.scss";
 @import "blocks/logo-link.scss";
 @import "blocks/header-contacts.scss";

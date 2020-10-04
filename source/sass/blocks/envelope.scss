@@ -1,12 +1,168 @@
 .envelope {
-  height: 878px;
-  background-color: blue;
+  @include container();
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 878px;
+  background-image:
+    url("../img/boards-bg@1x.png"),
+    url("../img/envelope-bg@1x.png");
+  background-position:
+    top 258px left calc(50% + 352.5px + 78px),
+    bottom center;
+  background-repeat: no-repeat;
+  background-size:
+      705px 515px,
+      cover;
+  background-color: $brand-color-dark;
+  color: $white;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image:
+      url("../img/boards-bg@2x.png"),
+      url("../img/envelope-bg@2x.png");
+  }
 
   @media (max-width: $tablet-width-max) {
-    height: 686px;
+    min-height: 686px;
+    background-size:
+      465px 340px,
+      cover;
+    background-position:
+      top 113px left calc(50% + 232.5px + 125px),
+      bottom center;
+  }
+
+  @media (max-width: $tablet-width-max) and (min-width: $tablet-width-min) {
+    padding-left: 88px;
+    padding-right: 88px;
   }
 
   @media (max-width: $mobile-width-max) {
-    height: 647px;
+    min-height: 647px;
+    background-size:
+      301px 220px,
+      cover;
+    background-position:
+      top 92px left calc(50% + 150.5px - 134px),
+      bottom center;
+  }
+}
+
+.envelope__title {
+  margin: 0;
+  margin-left: -3px;
+  margin-top: 316px;
+  font-family: $title-font-family;
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  @media (max-width: $tablet-width-max) {
+    max-width: 470px;
+    margin-left: 0;
+    margin-top: 188px;
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 0.07em;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-top: 286px;
+    font-size: 40px;
+    line-height: 47px;
+  }
+}
+
+.envelope__text {
+  max-width: 777px;
+  margin: 0;
+  padding-left: 94px;
+  margin-top: 27px;
+  position: relative;
+  font-size: 22px;
+  line-height: 34px;
+
+
+  @media (max-width: $tablet-width-max) {
+    max-width: 407px;
+    margin-top: 29px;
+    padding-left: 51px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-top: 27px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  &:before {
+    content: "";
+    width: 66px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: 16px;
+    background-color: $white;
+
+    @media (max-width: $tablet-width-max) {
+      width: 33px;
+      left: 3px;
+    }
+
+    @media (max-width: $mobile-width-max) {
+      top: 15px;
+    }
+  }
+}
+
+.envelope__button {
+  max-width: 624px;
+  margin-left: 94px;
+  margin-top: 43px;
+  padding-left: 46px;
+  padding-right: 46px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-size: 16px;
+  line-height: 19px;
+
+  @media (max-width: $tablet-width-max) {
+    max-width: 492px;
+    margin-left: 51px;
+    margin-top: 55px;
+    padding-left: 32px;
+    padding-right: 32px;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-left: 3px;
+    margin-top: 40px;
+    padding-right: 34px;
+  }
+}
+
+.envelope__scroll-link {
+  display: block;
+  margin-top: 93px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  opacity: 0.5;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    display: none;
   }
 }

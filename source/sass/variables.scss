@@ -21,9 +21,10 @@ $text-line-height: 22px;
 $white: #fff;
 
 $brand-color: #00b2ff;
+$brand-color-dark: #1B2D37;
 
 $text-color: #666;
-$footer-text-color: #1b2d37;
+$footer-text-color: $brand-color-dark;
 
 //Sizes
 $desktop-external-paddings: 43px;
