@@ -1,0 +1,12 @@
+.envelope {
+  height: 878px;
+  background-color: blue;
+
+  @media (max-width: $tablet-width-max) {
+    height: 686px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    height: 647px;
+  }
+}

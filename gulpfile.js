@@ -83,7 +83,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('js', function (done) {
-  gulp.src(['source/js/menu.js', 'source/js/main.js'], {allowEmpty: true})
+  gulp.src(['source/js/accordion.js', 'source/js/main.js'], {allowEmpty: true})
       .pipe(concat('main.js'))
       .pipe(gulp.dest('build/js'));
 
