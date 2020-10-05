@@ -1,4 +1,5 @@
 .button {
+  display: inline-block;
   min-width: 180px;
   padding-left: 0;
   padding-right: 0;
@@ -27,6 +28,7 @@
 }
 
 .button--transparent-blue {
+  border-color: $brand-color;
   background-color: transparent;
   color: $brand-color;
 }

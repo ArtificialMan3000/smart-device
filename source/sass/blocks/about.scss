@@ -1,0 +1,116 @@
+.about {
+  @include container;
+  margin-top: 73px;
+  padding-left: calc(#{calc-external-padding($desktop-external-paddings-wide)} + 180px);
+  padding-right: calc-external-padding($desktop-external-paddings-wide);
+  padding-bottom: 9px;
+  background-image: url("../img/2005-bg@1x.png");
+  background-repeat: no-repeat;
+  background-size: 220px 317px;
+  background-position: top 5px left calc(50% + 110px - 615px);
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/2005-bg@2x.png");
+  }
+
+  @media (max-width: $desktop-width-max) and  (min-width: $desktop-width-min) {
+    padding-left: calc(#{$desktop-external-paddings-wide} + 180px);
+    padding-right: $desktop-external-paddings-wide;
+  }
+
+  @media (max-width: $tablet-width-max) and  (min-width: $tablet-width-min){
+    padding-left: calc(#{$tablet-external-paddings} + 186px);
+  }
+
+  @media (max-width: $tablet-width-max) {
+    margin-top: 25px;
+    background-size: 251px 362px;
+    background-position: top -2px left calc(50% + 125.5px - 393px);
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-top: 37px;
+    background: none;
+  }
+}
+
+.about__title {
+  margin: 0;
+  margin-bottom: 21px;
+  font-family: $title-font-family;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 51px;
+
+  @media (max-width: $tablet-width-max) {
+    margin-bottom: 24px;
+    font-size: 32px;
+    line-height: 45px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-bottom: 21px;
+    font-size: 28px;
+    line-height: 39px;
+  }
+}
+
+.about__text {
+  width: 980px;
+  font-size: 16px;
+  line-height: 22px;
+
+  @media (max-width: $tablet-width-max) {
+    width: auto;
+    max-height: 201px;
+    margin-left: 3px;
+    position: relative;
+    overflow: hidden;
+    // text-overflow: ellipsis;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    max-height: 350px;
+    margin-left: 2px;
+  }
+
+  &:after {
+    @media (max-width: $tablet-width-max) {
+      content: "..";
+      position: absolute;
+      right: 5px;
+      bottom: 3px;
+    }
+
+    @media (max-width: $mobile-width-max) {
+      right: 134px;
+      bottom: 5px;
+    }
+  }
+}
+
+.about__text p {
+  margin: 0;
+  margin-bottom: 21px;
+  // text-overflow: ellipsis;
+
+  @media (max-width: $mobile-width-max) {
+    margin-bottom: 40px;
+  }
+}
+
+.about__button {
+  margin-top: 17px;
+  padding-top: 15px;
+  padding-bottom: 12px;
+
+  @media (max-width: $tablet-width-max) {
+    margin-left: 3px;
+    margin-top: 37px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-left: 2px;
+    margin-top: 26px;
+  }
+}

@@ -1,0 +1,122 @@
+.advantage {
+  padding-left: 41px;
+  padding-right: 41px;
+  padding-top: 94px;
+  padding-bottom: 40px;
+  position: relative;
+  border: 1px solid #EBEBEB;
+  border-left: 3px solid $brand-color;
+  cursor: pointer;
+
+  @media (max-width: $tablet-width-max) {
+    padding-left: 25px;
+    padding-right: 21px;
+    padding-top: 66px;
+    padding-bottom: 20px;
+    border-left-width: 2px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-right: 12px;
+    padding-top: 72px;
+    padding-bottom: 23px;
+  }
+
+  &:hover {
+    background-color: $brand-color;
+    color: $white;
+  }
+}
+
+.advantage__icon {
+  display: block;
+  position: absolute;
+  left: 41px;
+  top: 39px;
+  fill: $brand-color;
+
+  @media (max-width: $tablet-width-max) {
+    left: 25px;
+    top: 23px;
+  }
+
+  &--stopwatch {
+    width: 29px;
+    height: 35px;
+  }
+
+  &--hired {
+    width: 35px;
+    height: 35px;
+
+    @media (max-width: $tablet-width-max) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &--detective {
+    width: 36px;
+    height: 31px;
+    left: 42px;
+    top: 42px;
+
+    @media (max-width: $tablet-width-max) {
+      width: 30px;
+      height: 26px;
+      left: 27px;
+      top: 25px;
+    }
+  }
+
+  &--tag {
+    width: 35px;
+    height: 35px;
+    left: 42px;
+    top: 38px;
+
+    @media (max-width: $tablet-width-max) {
+      width: 32px;
+      height: 32px;
+      left: 25px;
+      top: 23px;
+    }
+  }
+
+  .advantage:hover & {
+    fill: $white;
+  }
+}
+
+.advantage__title {
+  margin: 0;
+  font-family: $title-font-family;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 34px;
+  color: $brand-color;
+
+  @media (max-width: $mobile-width-max) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .advantage:hover & {
+    color: $white;
+  }
+}
+
+.advantage__text {
+  margin: 0;
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 22px;
+
+  @media (max-width: $tablet-width-max) {
+    margin-top: 9px;
+  }
+
+  .advantage:hover & {
+    color: $white;
+  }
+}
