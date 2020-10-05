@@ -7,7 +7,8 @@
   background-image: url("../img/2005-bg@1x.png");
   background-repeat: no-repeat;
   background-size: 220px 317px;
-  background-position: top 5px left calc(50% + 110px - 615px);
+  background-position-x: calc(#{calc-external-padding($desktop-external-paddings-wide)} + 110px - 30px);
+  background-position-y: 5px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/2005-bg@2x.png");
@@ -16,6 +17,7 @@
   @media (max-width: $desktop-width-max) and  (min-width: $desktop-width-min) {
     padding-left: calc(#{$desktop-external-paddings-wide} + 180px);
     padding-right: $desktop-external-paddings-wide;
+    background-position-x: calc(#{$desktop-external-paddings-wide} - 30px);
   }
 
   @media (max-width: $tablet-width-max) and  (min-width: $tablet-width-min){
@@ -25,7 +27,8 @@
   @media (max-width: $tablet-width-max) {
     margin-top: 25px;
     background-size: 251px 362px;
-    background-position: top -2px left calc(50% + 125.5px - 393px);
+    background-position-x: calc(#{$tablet-external-paddings} - 32px);
+    background-position-y: -2px;
   }
 
   @media (max-width: $mobile-width-max) {
@@ -56,12 +59,12 @@
 }
 
 .about__text {
-  width: 980px;
+  max-width: 980px;
   font-size: 16px;
   line-height: 22px;
 
   @media (max-width: $tablet-width-max) {
-    width: auto;
+    max-width: none;
     max-height: 201px;
     margin-left: 3px;
     position: relative;
@@ -84,7 +87,7 @@
 
     @media (max-width: $mobile-width-max) {
       right: 134px;
-      bottom: 5px;
+      bottom: 2px;
     }
   }
 }
