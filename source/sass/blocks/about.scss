@@ -3,7 +3,7 @@
   margin-top: 73px;
   padding-left: calc(#{calc-external-padding($desktop-external-paddings-wide)} + 180px);
   padding-right: calc-external-padding($desktop-external-paddings-wide);
-  padding-bottom: 9px;
+  padding-bottom: 110px;
   background-image: url("../img/2005-bg@1x.png");
   background-repeat: no-repeat;
   background-size: 220px 317px;
@@ -26,6 +26,7 @@
 
   @media (max-width: $tablet-width-max) {
     margin-top: 25px;
+    padding-bottom: 83px;
     background-size: 251px 362px;
     background-position-x: calc(#{$tablet-external-paddings} - 32px);
     background-position-y: -2px;
@@ -33,6 +34,7 @@
 
   @media (max-width: $mobile-width-max) {
     margin-top: 37px;
+    padding-bottom: 65px;
     background: none;
   }
 }

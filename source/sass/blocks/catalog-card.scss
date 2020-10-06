@@ -1,0 +1,97 @@
+.catalog-card__link {
+  display: block;
+  height: 100%;
+  padding-left: 44px;
+  padding-right: 44px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+  color: $white;
+  z-index: 0;
+
+  @media (max-width: $tablet-width-max) {
+    padding-left: 46px;
+    padding-right: 46px;
+    padding-top: 41px;
+    padding-bottom: 41px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:before {
+    content: "";
+    width: 63px;
+    height: 63px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: $brand-color;
+    z-index: 1;
+
+    @media (max-width: $tablet-width-max) {
+      right: 2px;
+    }
+
+    @media (max-width: $mobile-width-max) {
+      right: 0;
+    }
+  }
+
+  &:after {
+    content: "";
+    width: 6px;
+    height: 9px;
+    position: absolute;
+    right: 26px;
+    bottom: 27px;
+    background-image: url("../img/arrow-icon.svg");
+    background-repeat: no-repeat;
+    z-index: 1;
+
+    @media (max-width: $mobile-width-max) {
+      right: 29px;
+    }
+  }
+}
+
+.catalog-card__title {
+  max-width: 160px;
+  margin: 0;
+  font-family: $title-font-family;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+
+  @media (max-width: $tablet-width-max) {
+
+  }
+}
+
+.catalog-card__img {
+  width: 370px;
+  height: 620px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  opacity: 0.2;
+
+  @media (max-width: $tablet-width-max) {
+    width: 720px;
+    height: 256px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    width: 290px;
+    height: 256px;
+  }
+}

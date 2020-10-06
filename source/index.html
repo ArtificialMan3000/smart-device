@@ -52,10 +52,10 @@
     <section class="envelope">
       <h2 class="envelope__title">Печатные платы</h2>
       <p class="envelope__text">производство и монтаж, поставка комплектующих, блоков и модулей</p>
-      <button class="envelope__button envelope__button--full button button--fill-blue">
+      <a class="envelope__button envelope__button--full button button--fill-blue" href="#feedback">
         <span class="hidden-mobile">Получить бесплатную консультацию</span>
         <span class="hidden-desktop hidden-tablet">Бесплатная консультация</span>
-      </button>
+      </a>
       <a class="envelope__scroll-link" href="#advantages">Скролл вниз</a>
     </section>
     <section id="advantages" class="advantages">
@@ -112,6 +112,57 @@
         </p>
       </div>
       <a class="about__button button button--transparent-blue" href="#">Подробнее</a>
+    </section>
+    <section class="catalog">
+      <h2 class="visually-hidden">Товары и услуги</h2>
+      <p class="catalog__text">Service Device предлагает следующие товары и&nbsp;услуги</p>
+      <ul class="catalog__list">
+        <li class="catalog__item catalog-card">
+          <a href="#" class="catalog-card__link">
+            <h3 class="catalog-card__title">Производство печатных плат</h3>
+            <picture>
+              <!-- 1х: 290px; 2x: 580px -->
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/PCB-manufacturing-mobile-img@1x.webp 1x, img/PCB-manufacturing-mobile-img@2x.webp 2x">
+              <!-- 1х: 720px; 2x: 1440px -->
+              <source type="image/webp" media="(max-width: 1023px)" srcset="img/PCB-manufacturing-tablet-img@1x.webp 1x, img/PCB-manufacturing-tablet-img@2x.webp 2x">
+              <!-- 1х: 370px; 2x: 640px -->
+              <source type="image/webp" srcset="img/PCB-manufacturing-desktop-img@1x.webp 1x, img/PCB-manufacturing-desktop-img@2x.webp 2x">
+              <!-- 1х: 370px; 2x: 740px -->
+              <img class="catalog-card__img" src="img/PCB-manufacturing-desktop-img@1x.jpg" width="370" height="620" alt="Производство печатных плат">
+            </picture>
+          </a>
+        </li>
+        <li class="catalog__item catalog-card">
+          <a href="#" class="catalog-card__link">
+            <h3 class="catalog-card__title">Монтаж печатных плат</h3>
+            <picture>
+              <!-- 1х: 290px; 2x: 580px -->
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/PCB-assembling-mobile-img@1x.webp 1x, img/PCB-assembling-mobile-img@2x.webp 2x">
+              <!-- 1х: 720px; 2x: 1440px -->
+              <source type="image/webp" media="(max-width: 1023px)" srcset="img/PCB-assembling-tablet-img@1x.webp 1x, img/PCB-assembling-tablet-img@2x.webp 2x">
+              <!-- 1х: 370px; 2x: 640px -->
+              <source type="image/webp" srcset="img/PCB-assembling-desktop-img@1x.webp 1x, img/PCB-assembling-desktop-img@2x.webp 2x">
+              <!-- 1х: 370px; 2x: 740px -->
+              <img class="catalog-card__img" src="img/PCB-assembling-desktop-img@1x.jpg" width="370" height="620" alt="Монтаж печатных плат">
+            </picture>
+          </a>
+        </li>
+        <li class="catalog__item catalog-card">
+          <a href="#" class="catalog-card__link">
+            <h3 class="catalog-card__title">Комплектующие для светотехники</h3>
+            <picture>
+              <!-- 1х: 290px; 2x: 580px -->
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/lighting-accessories-mobile-img@1x.webp 1x, img/lighting-accessories-mobile-img@2x.webp 2x">
+              <!-- 1х: 720px; 2x: 1440px -->
+              <source type="image/webp" media="(max-width: 1023px)" srcset="img/lighting-accessories-tablet-img@1x.webp 1x, img/lighting-accessories-tablet-img@2x.webp 2x">
+              <!-- 1х: 370px; 2x: 640px -->
+              <source type="image/webp" srcset="img/lighting-accessories-desktop-img@1x.webp 1x, img/lighting-accessories-desktop-img@2x.webp 2x">
+              <!-- 1х: 370px; 2x: 740px -->
+              <img class="catalog-card__img" src="img/lighting-accessories-desktop-img@1x.jpg" width="370" height="620" alt="Комплектующие для светотехники">
+            </picture>
+          </a>
+        </li>
+      </ul>
     </section>
   </main>
   <footer class="page-footer">
