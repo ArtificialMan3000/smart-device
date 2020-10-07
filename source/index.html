@@ -164,6 +164,25 @@
         </li>
       </ul>
     </section>
+    <section id="feedback" class="feedback">
+      <div class="feedback__col-right">
+        <h2 class="feedback__title">Остались вопросы? Задайте их нам!</h2>
+        <p class="feedback__text">Мы проконсультируем Вас бесплатно</p>
+        <div class="feedback__form feedback-form">
+          <form action="/" method="post" enctype="multipart/form-data">
+            <label for="name" class="visually-hidden">Имя</label>
+            <input id="name" name="name" type="text" placeholder="Имя">
+            <label for="phone" class="visually-hidden">Телефон</label>
+            <input id="phone" name="phone" type="tel" placeholder="Телефон" pattern="\+7 \([0-9]{3}\) [0-9]{7}">
+            <label for="message" class="visually-hidden">Ваш вопрос</label>
+            <textarea id="message" name="message" placeholder="Ваш вопрос"></textarea>
+            <button type="submit">Задать вопрос</button>
+            <input id="agreement" name="agreement" type="checkbox">
+            <label for="agreement">Я согласен на обработку  персональных данных</label>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="page-footer">
     <div class="page-footer__top-row">

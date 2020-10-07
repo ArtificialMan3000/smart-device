@@ -1,14 +1,5 @@
 .page-footer {
-  margin-top: 2872px;
   color: $footer-text-color;
-
-  @media (max-width: $tablet-width-max) {
-    margin-top: 2904px;
-  }
-
-  @media (max-width: $mobile-width-max) {
-    margin-top: 3537px;
-  }
 }
 
 .page-footer__top-row {

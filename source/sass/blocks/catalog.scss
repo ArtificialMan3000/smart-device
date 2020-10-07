@@ -10,7 +10,6 @@
   @media (max-width: $desktop-width-max) and  (min-width: $desktop-width-min) {
     padding-left: $desktop-external-paddings-wide;
     padding-right: $desktop-external-paddings-wide;
-    background-position-x: calc(#{$desktop-external-paddings-wide} - 30px);
   }
 
   @media (max-width: $tablet-width-max) {
@@ -53,7 +52,7 @@
 .catalog__item {
   width: 31.624%;
   min-height: 620px;
-  margin-right: 30px;
+  margin-right: 2.564%;
   margin-bottom: 30px;
 
   @media (max-width: $tablet-width-max) {
