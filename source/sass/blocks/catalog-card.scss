@@ -77,21 +77,11 @@
 }
 
 .catalog-card__img {
-  width: 370px;
-  height: 620px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   object-fit: cover;
   opacity: 0.2;
-
-  @media (max-width: $tablet-width-max) {
-    width: 720px;
-    height: 256px;
-  }
-
-  @media (max-width: $mobile-width-max) {
-    width: 290px;
-    height: 256px;
-  }
 }

@@ -4,9 +4,14 @@
   box-sizing: inherit;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   box-sizing: border-box;
   min-width: $mobile-width-min;
+  height: 100%;
 
   font-family: $text-font-family;
   font-size: $text-font-size;

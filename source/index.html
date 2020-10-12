@@ -43,7 +43,7 @@
         </li>
       </ul>
     </address>
-    <button class="page-header__feedback-button button button--transparent-white">
+    <button class="page-header__feedback-button button button--transparent-white call-request">
       Заказать звонок
     </button>
   </header>
@@ -171,13 +171,13 @@
         <div class="feedback__form feedback-form">
           <form action="/" method="post" enctype="multipart/form-data">
             <label for="name" class="visually-hidden">Имя</label>
-            <input id="name" name="name" type="text" placeholder="Имя">
+            <input id="name" name="name" type="text" required placeholder="Имя">
             <label for="phone" class="visually-hidden">Телефон</label>
-            <input id="phone" name="phone" type="tel" placeholder="Телефон" pattern="\+7 \([0-9]{3}\) [0-9]{7}">
+            <input id="phone" name="phone" type="tel" required placeholder="Телефон" pattern="\+7\([0-9]{3}\)[0-9]{7}">
             <label for="message" class="visually-hidden">Ваш вопрос</label>
             <textarea id="message" name="message" placeholder="Ваш вопрос"></textarea>
             <button type="submit">Задать вопрос</button>
-            <input id="agreement" name="agreement" type="checkbox">
+            <input id="agreement" name="agreement" type="checkbox" required>
             <label for="agreement">Я согласен на обработку  персональных данных</label>
           </form>
         </div>
@@ -260,6 +260,29 @@
       </p>
     </div>
   </footer>
+  <section class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__window">
+      <button class="modal__close">
+        <span class="visually-hidden">Закрыть окно</span>
+      </button>
+      <h2 class="modal__title">Закажите звонок</h2>
+      <p class="modal__text">Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+      <div class="modal__form modal-form">
+        <form id="buy-form" action="/" method="post" enctype="multipart/form-data">
+          <label for="modal-name" class="visually-hidden">Имя</label>
+          <input id="modal-name" name="name" type="text"  required placeholder="Имя">
+          <label for="modal-phone" class="visually-hidden">Телефон</label>
+          <input id="modal-phone" name="phone" type="tel"  required placeholder="Телефон" pattern="\+7\([0-9]{3}\)[0-9]{7}">
+          <label for="modal-message" class="visually-hidden">Ваш вопрос</label>
+          <textarea id="modal-message" name="message" placeholder="Ваш вопрос"></textarea>
+          <button type="submit">Отправить</button>
+          <input id="modal-agreement" name="agreement" type="checkbox" required>
+          <label for="modal-agreement">Я согласен на обработку  персональных данных</label>
+        </form>
+      </div>
+    </div>
+  </section>
 </div>
 <script src="js/vendor.js"></script>
 <script src="js/main.js"></script>

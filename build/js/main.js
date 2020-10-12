@@ -73,14 +73,191 @@ window.accordion = (function () {
 
 'use strict';
 
+// Модуль модального окна
+window.modal = (function () {
+  // Модальное окно
+  var MODAL = document.querySelector('.modal');
+  // Кнопка закрытия модального окна
+  var MODAL_CLOSE = MODAL.querySelector('.modal__close');
+  // Оверлэй модального окна
+  var MODAL_OVERLAY = MODAL.querySelector('.modal__overlay');
+  // Кнопки вызова модального окна
+  var CALL_REQUEST_BUTTONS = document.querySelectorAll('.call-request');
+  // Поле "Имя"
+  var nameField = MODAL.querySelector('.modal-form input#modal-name');
+
+  // Показывает модальное окно
+  var showModal = function () {
+    MODAL.classList.add('modal--show');
+    document.body.classList.add('body-modal-open');
+    nameField.focus();
+  };
+
+  // Скрывает модальное окно
+  var hideModal = function () {
+    MODAL.classList.remove('modal--show');
+    document.body.classList.remove('body-modal-open');
+  };
+
+  // Инициализирует модальное окно
+  var initModal = function () {
+    if (CALL_REQUEST_BUTTONS) {
+      for (var i = 0; i < CALL_REQUEST_BUTTONS.length; i++) {
+        CALL_REQUEST_BUTTONS[i].addEventListener('click', function () {
+          showModal();
+        });
+      }
+    }
+
+    if (MODAL_CLOSE) {
+      MODAL_CLOSE.addEventListener('click', function () {
+        hideModal();
+      });
+    }
+
+    if (MODAL_OVERLAY) {
+      MODAL_OVERLAY.addEventListener('click', function () {
+        hideModal();
+      });
+    }
+
+    document.addEventListener('keydown', function (evt) {
+      if (evt.key === 'Escape') {
+        evt.preventDefault();
+        hideModal();
+      }
+    });
+  };
+
+  return {
+    initModal: initModal
+  };
+})();
+
+'use strict';
+
+// Модуль хранения данных формы
+window.formStorage = (function () {
+  // Сохраняет поля формы в localStorage
+  var saveFields = function (form, fieldsNames) {
+    if (form && fieldsNames) {
+      for (var i = 0; i < fieldsNames.length; i++) {
+        var currFieldSelector = '[name="' + fieldsNames[i] + '"]';
+        var currField = form.querySelector(currFieldSelector);
+        localStorage.setItem(fieldsNames[i], currField.value);
+      }
+    }
+  }
+
+  // Получает данные формы из localStorage
+  var getFields = function (fieldsNames) {
+    var formData = [];
+    if (fieldsNames) {
+      for (var i = 0; i < fieldsNames.length; i++) {
+        var currFieldName = fieldsNames[i];
+        var currFieldData = {
+          'name': currFieldName,
+          'value': localStorage.getItem(currFieldName)
+        }
+        formData.push(currFieldData);
+      }
+    }
+    return formData;
+  }
+
+  // Записывает данные в форму
+  var setFields = function (form, formData) {
+    if (form && formData) {
+      for (var i = 0; i < formData.length; i++) {
+        var currFieldSelector = '[name="' + formData[i].name + '"]';
+        var currField = form.querySelector(currFieldSelector);
+        currField.value = formData[i].value;
+      }
+    }
+  }
+
+  // Инициализирует хранилище данных формы
+  var initFormStorage = function (form, fieldsNames) {
+    if (form && fieldsNames) {
+      var formData = getFields(fieldsNames);
+      setFields(form, formData);
+
+      form.addEventListener('submit', function () {
+        saveFields(form, fieldsNames);
+      });
+    }
+  }
+
+  return {
+    initFormStorage: initFormStorage
+  }
+})();
+
+'use strict';
+
+// Модуль, который помогает заполнять поле телефона
+window.phoneFieldHelper = (function () {
+  // Поля телефона
+  var phoneFields = document.querySelectorAll('input[type="tel"]');
+  // Сообщение об ошибке
+  var INVALID_MESSAGE = 'Укажите телефон в формате +7(XXX)XXXXXXX';
+
+  // Устанавливает сообщение для поля телефона
+  var setPhoneFieldValidationMessage = function (field) {
+    if (field) {
+      field.addEventListener('change', function (evt) {
+        evt.target.setCustomValidity('');
+        if (!evt.target.checkValidity()) {
+          evt.target.setCustomValidity(INVALID_MESSAGE);
+        }
+      });
+    }
+  };
+
+  // Автоматически форматирует значение, вводимое в поле телефона
+  var autoformatPhoneValue = function (field) {
+    if (field) {
+      field.addEventListener('input', function (evt) {
+        if (evt.target.value.slice(0, 4).search('^\\+7\\(') === -1) {
+          evt.target.value = '+7(';
+        } else if (evt.target.value.search('^\\+7\\([0-9]{3}$') !== -1) {
+          evt.target.value += ')';
+        } else if (evt.target.value.search('^\\+7\\([0-9]{3}\\)[0-9]{7}') !== -1) {
+          evt.target.value = evt.target.value.slice(0, 14);
+        }
+      });
+    }
+  };
+
+  // Инициализирует модуль
+  var initPhoneFieldHelper = function () {
+    if (phoneFields && phoneFields.length > 0) {
+      for (var i = 0; i < phoneFields.length; i++) {
+        setPhoneFieldValidationMessage(phoneFields[i]);
+        autoformatPhoneValue(phoneFields[i]);
+      }
+    }
+  };
+
+  return {
+    initPhoneFieldHelper: initPhoneFieldHelper
+  };
+})();
+
+'use strict';
+
 // Главный модуль
 window.main = (function () {
   // Инициализируем аккордеон
   window.accordion.initAccordion();
 
-  // var aboutText = document.querySelectorAll('.about__text p');
-  // $clamp(aboutText[1], {
-  //   clamp: 'auto',
-  //   useNativeClamp: false
-  // });
+  // Инициализируем модальное окно
+  window.modal.initModal();
+
+  // Инициализируем хранилище данных формы в модальном окне
+  var modalForm = document.querySelector('.modal-form form');
+  window.formStorage.initFormStorage(modalForm, ['name', 'phone', 'message']);
+
+  // Инициализируем помощник заполнения поля телефона
+  window.phoneFieldHelper.initPhoneFieldHelper();
 })();

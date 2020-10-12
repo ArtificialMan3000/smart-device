@@ -82,10 +82,10 @@
       top: 23px;
     }
   }
+}
 
-  .advantage:hover & {
-    fill: $white;
-  }
+.advantage:hover .advantage__icon {
+  fill: $white;
 }
 
 .advantage__title {
@@ -100,10 +100,10 @@
     font-size: 20px;
     line-height: 28px;
   }
+}
 
-  .advantage:hover & {
-    color: $white;
-  }
+.advantage:hover .advantage__title {
+  color: $white;
 }
 
 .advantage__text {
@@ -115,8 +115,8 @@
   @media (max-width: $tablet-width-max) {
     margin-top: 9px;
   }
+}
 
-  .advantage:hover & {
-    color: $white;
-  }
+.advantage:hover .advantage__text {
+  color: $white;
 }

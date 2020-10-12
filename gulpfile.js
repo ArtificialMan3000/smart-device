@@ -27,7 +27,7 @@ gulp.task('css', function (done) {
       ]))
       .pipe(rename('style.css'))
       .pipe(sourcemap.write('.'))
-      .pipe(gulp.dest('build/css'))
+      .pipe(gulp.dest('build/css'));
 
   gulp.src('source/sass/style.scss')
       .pipe(plumber())
@@ -83,7 +83,14 @@ gulp.task('html', function () {
 });
 
 gulp.task('js', function (done) {
-  gulp.src(['source/js/accordion.js', 'source/js/main.js'], {allowEmpty: true})
+  gulp.src([
+    'source/js/accordion.js',
+    'source/js/modal.js',
+    'source/js/form-storage.js',
+    'source/js/phone-field-helper.js',
+    'source/js/main.js'
+  ],
+  {allowEmpty: true})
       .pipe(concat('main.js'))
       .pipe(gulp.dest('build/js'));
 
