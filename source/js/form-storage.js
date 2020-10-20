@@ -11,7 +11,7 @@ window.formStorage = (function () {
         localStorage.setItem(fieldsNames[i], currField.value);
       }
     }
-  }
+  };
 
   // Получает данные формы из localStorage
   var getFields = function (fieldsNames) {
@@ -22,12 +22,12 @@ window.formStorage = (function () {
         var currFieldData = {
           'name': currFieldName,
           'value': localStorage.getItem(currFieldName)
-        }
+        };
         formData.push(currFieldData);
       }
     }
     return formData;
-  }
+  };
 
   // Записывает данные в форму
   var setFields = function (form, formData) {
@@ -38,7 +38,7 @@ window.formStorage = (function () {
         currField.value = formData[i].value;
       }
     }
-  }
+  };
 
   // Инициализирует хранилище данных формы
   var initFormStorage = function (form, fieldsNames) {
@@ -50,9 +50,9 @@ window.formStorage = (function () {
         saveFields(form, fieldsNames);
       });
     }
-  }
+  };
 
   return {
     initFormStorage: initFormStorage
-  }
+  };
 })();

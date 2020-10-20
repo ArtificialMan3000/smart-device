@@ -20,3 +20,12 @@
     font-size: 15px;
   }
 }
+
+.contacts__link {
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+}

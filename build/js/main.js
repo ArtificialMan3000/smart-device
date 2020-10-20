@@ -6,7 +6,36 @@ window.accordion = (function () {
   var accordionItems = document.querySelectorAll('.accordion');
   // Заголовки аккордеона
   var accordionTitles = document.querySelectorAll('.accordion__title');
+  // Строка медиа-запроса для мобильной версии
+  var mediaStringMobile = '(max-width: 767px)';
+  // Объект MediaQueryList для мобильной версии
+  var mqlMobile = window.matchMedia(mediaStringMobile);
 
+  // Устанавливает обработчик совпадения с медиазапросом для заголовка аккордеона
+  // (делает его фокусабельным в зависимости от медиа-условий)
+  var addAccordionTitleMediaQueryMatchHandler = function (mediaQueryList, element) {
+    mediaQueryList.addListener(function (evt) {
+      if (evt.matches) {
+        makeFocusable(element);
+      } else {
+        makeUnfocusable(element);
+      }
+    });
+  };
+
+  // Добавляет возможность фокусироваться на элементе
+  var makeFocusable = function (element) {
+    if (element) {
+      element.setAttribute('tabindex', 0);
+    }
+  };
+
+  // Убирает возможность фокусироваться на элементе
+  var makeUnfocusable = function (element) {
+    if (element) {
+      element.removeAttribute('tabindex');
+    }
+  };
 
   // Закрывает элемент аккордеона
   var closeAccordionItem = function (element) {
@@ -24,7 +53,7 @@ window.accordion = (function () {
 
   // Закрывает все элементы аккордеона
   var closeAccordionItems = function () {
-    if (accordionItems) {
+    if (accordionItems && accordionItems.length > 0) {
       for (var i = 0; i < accordionItems.length; i++) {
         closeAccordionItem(accordionItems[i]);
       }
@@ -43,27 +72,35 @@ window.accordion = (function () {
     }
   };
 
-  // Устанавливает обработчик для открытия и закрытия элемента аккордеона
-  var addAccordionTitlesClickHandler = function () {
-    if (accordionTitles) {
-      for (var i = 0; i < accordionTitles.length; i++) {
-        accordionTitles[i].addEventListener('click', function (evt) {
-          toggleAccordionItem(evt.target.parentElement);
-        });
+  // Устанавливает обработчик клика на заголовке аккордеона
+  // (открывает и закрывает элемент аккордеона)
+  var addAccordionTitleClickHandler = function (element) {
+    if (element) {
+      element.addEventListener('click', function (evt) {
+        toggleAccordionItem(evt.target.parentElement);
+      });
 
-        accordionTitles[i].addEventListener('keydown', function (evt) {
-          if (evt.key === "Enter" || evt.key === "Spacebar" || evt.key === " ") {
-            evt.preventDefault();
-            toggleAccordionItem(evt.target.parentElement);
-          }
-        });
-      }
+      element.addEventListener('keydown', function (evt) {
+        if (evt.key === 'Enter' || evt.key === 'Spacebar' || evt.key === ' ') {
+          evt.preventDefault();
+          toggleAccordionItem(evt.target.parentElement);
+        }
+      });
     }
   };
 
   // Инициализирует аккордеон
   var initAccordion = function () {
-    addAccordionTitlesClickHandler();
+    closeAccordionItems();
+    if (accordionTitles && accordionTitles.length > 0) {
+      for (var i = 0; i < accordionTitles.length; i++) {
+        if (mqlMobile.matches) {
+          makeFocusable(accordionTitles[i]);
+        }
+        addAccordionTitleMediaQueryMatchHandler(mqlMobile, accordionTitles[i]);
+        addAccordionTitleClickHandler(accordionTitles[i]);
+      }
+    }
   };
 
   return {
@@ -147,7 +184,7 @@ window.formStorage = (function () {
         localStorage.setItem(fieldsNames[i], currField.value);
       }
     }
-  }
+  };
 
   // Получает данные формы из localStorage
   var getFields = function (fieldsNames) {
@@ -158,12 +195,12 @@ window.formStorage = (function () {
         var currFieldData = {
           'name': currFieldName,
           'value': localStorage.getItem(currFieldName)
-        }
+        };
         formData.push(currFieldData);
       }
     }
     return formData;
-  }
+  };
 
   // Записывает данные в форму
   var setFields = function (form, formData) {
@@ -174,7 +211,7 @@ window.formStorage = (function () {
         currField.value = formData[i].value;
       }
     }
-  }
+  };
 
   // Инициализирует хранилище данных формы
   var initFormStorage = function (form, fieldsNames) {
@@ -186,11 +223,11 @@ window.formStorage = (function () {
         saveFields(form, fieldsNames);
       });
     }
-  }
+  };
 
   return {
     initFormStorage: initFormStorage
-  }
+  };
 })();
 
 'use strict';
